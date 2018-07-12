@@ -1,0 +1,2 @@
+class TotalAnnualCompensationsController < ApplicationController
+end
