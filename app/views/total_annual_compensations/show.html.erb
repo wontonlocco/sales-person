@@ -1,0 +1,7 @@
+<h3>Annual Compensation: <%= @total_annual_compensation.fixed_salary %> </h3><br>
+<p>Description: <%= @total_annual_compensation.total_sales %></p><br>
+ 
+
+<%= link_to 'Back', person_total_annual_compensations_path %><br>
+<%= link_to 'Edit', edit_person_total_annual_compensation_path %><br>
+<%= link_to 'Delete', person_total_annual_compensation_path, method: 'delete' %>

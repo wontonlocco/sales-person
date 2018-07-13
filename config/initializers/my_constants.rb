@@ -1,0 +1,1 @@
+FIXEDSALARY = ['100000000'].freeze

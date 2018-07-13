@@ -1,24 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
 * Ruby version
+ruby-version 2.5.0
 
-* System dependencies
+This app is a nested resource where a salesperson has_one totalannualcompensation and a totalannualcompensation belongs_to a salesperson. Plural as far as AR is concerned is salespeople in this context. 
+A salesperson will earn a fixed salary of $100,000
 
-* Configuration
+A salesperson will also receive a commission as a sales incentive. Commission is a percentage of the salesperson’s annual sales. The current commission is 5% of total sales
 
-* Database creation
+The total annual compensation is the fixed salary plus the commission earned.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

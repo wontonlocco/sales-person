@@ -1,0 +1,38 @@
+<head>
+	<style>
+	table {
+		font-family: arial, sans-serif;
+		border-collapse: collapse;
+		width: 100%;
+	}
+	td, th {
+		border: 1px solid #dddddd;
+		text-align: left;
+		padding: 8px;
+	}
+	tr:nth-child(even) {
+		background-color: #dddddd;
+	}
+</style>
+</head>
+<body>
+	<h1>Total Compensation for <%= link_to @person.name, person_total_annual_compensations_path(person_id: @person.id) %> </h1>
+<!-- above link destination should be to display compensation -->
+		<h1><%= @person.name %> Details</h1>
+	<table>
+		<tr>
+			<th>Person Name</th>
+			<th>Address</th>
+		</tr>
+		<tr>
+			<td><%= @person.name %> </td>
+			<td><%= @person.address %> </td>
+		</tr>
+	</table>
+
+	<br>
+	<br>
+	<%= link_to 'Back', people_path %><br>
+	<%= link_to 'Edit', edit_person_path(@person) %><br>
+	<%= link_to 'Delete', person_path, method: 'delete' %><br>
+</body>
