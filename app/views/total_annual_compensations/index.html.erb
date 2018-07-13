@@ -1,8 +1,7 @@
 <%= link_to 'Create a new annual compensation', new_person_total_annual_compensation_path %>
 <h2>Annual Compensation for <%= @person.name %> individual</h2>
-<ul>
- <% @person.total_annual_compensations.each do |comp| %> 
-<li><%= link_to comp.fixed_salary, person_total_annual_compensation_path(id: total_annual_compensation.id) %></li><br>
- <% end %>
- </ul>
+
+<p><%= link_to @total_annual_compensation.fixed_salary, person_total_annual_compensation_path(id: @total_annual_compensation.id) %></p>
+<br>
+
  <%= link_to 'Go Back', people_path %><br>

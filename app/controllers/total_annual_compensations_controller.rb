@@ -4,7 +4,7 @@ class TotalAnnualCompensationsController < ApplicationController
 	before_action :find_total_annual_compensation, only: [:show, :update, :edit, :destroy]
 
 	def index
-		@total_annual_compensations = @person.total_annual_compensations
+		@total_annual_compensation = @person.total_annual_compensation
 	end
 	def create
 		@total_annual_compensation = TotalAnnualCompensation.create(total_annual_compensation_params)
