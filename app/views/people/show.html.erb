@@ -1,36 +1,9 @@
-<head>
-	<style>
-	table {
-		font-family: arial, sans-serif;
-		border-collapse: collapse;
-		width: 100%;
-	}
-	td, th {
-		border: 1px solid #dddddd;
-		text-align: left;
-		padding: 8px;
-	}
-	tr:nth-child(even) {
-		background-color: #dddddd;
-	}
-</style>
-</head>
-<body>
-	<h1>Total Compensation for <%= link_to @person.name, person_total_annual_compensations_path(person_id: @person.id) %> </h1>
-<!-- above link destination should be to display compensation -->
-		<h1><%= @person.name %> Details</h1>
-	<table>
-		<tr>
-			<th>Person Name</th>
-			<th>Address</th>
-		</tr>
-		<tr>
-			<td><%= @person.name %> </td>
-			<td><%= @person.address %> </td>
-		</tr>
-	</table>
 
-	<br>
+<body>
+	<h1>Sales Details for <%= link_to @person.name, person_deals_path(person_id: @person.id) %> </h1>
+	<span>Salary plus commission for the year is calculated at: <%= number_to_currency(@person.calculate_commission) %></span>
+<!-- above link destination should be to display compensation -->
+<!--Add something else to show for this individual person and reserve the nested details for the views that handle them -->
 	<br>
 	<%= link_to 'Back', people_path %><br>
 	<%= link_to 'Edit', edit_person_path(@person) %><br>

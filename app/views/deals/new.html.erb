@@ -1,0 +1,11 @@
+<h1> Create a New Sale </h1>
+<%= form_for [@person, @deal] do |f| %>
+<%= label_tag(:deal, "Sale Title:") %>
+<%= text_field(:deal, :title) %><br>
+<%= label_tag(:deal, "Sale Description:") %>
+<%= text_field(:deal, :description) %><br>
+<%= label_tag(:deal, "Sale Amount:") %>
+<%= text_field(:deal, :amount) %><br>
+<%= f.submit %>
+<% end %>
+<%= link_to ' Back to People', people_path %> <br/>

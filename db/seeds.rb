@@ -5,28 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-sales_person_2 = Person.create!(name: Faker::Name.name, address: Faker::Address.full_address)
-sales_person_1 = Person.create!(name: Faker::Name.name, address: Faker::Address.full_address)
-sales_person_3 = Person.create!(name: Faker::Name.name, address: Faker::Address.full_address)
-sales_person_4 = Person.create!(name: Faker::Name.name, address: Faker::Address.full_address)
-sales_person_5 = Person.create!(name: Faker::Name.name, address: Faker::Address.full_address)
-sales_person_6 = Person.create!(name: Faker::Name.name, address: Faker::Address.full_address)
-sales_person_7 = Person.create!(name: Faker::Name.name, address: Faker::Address.full_address)
-sales_person_8 = Person.create!(name: Faker::Name.name, address: Faker::Address.full_address)
-sales_person_9 = Person.create!(name: Faker::Name.name, address: Faker::Address.full_address)
-sales_person_10 = Person.create!(name: Faker::Name.name, address: Faker::Address.full_address) 
-sales_person_11 = Person.create!(name: Faker::Name.name, address: Faker::Address.full_address)
-sales_person_12 = Person.create!(name: Faker::Name.name, address: Faker::Address.full_address)
-
-TotalAnnualCompensation.create!(total_sales: ('%010d' % rand(10 ** 10)), fixed_salary: FIXEDSALARY, person: sales_person_1)
-TotalAnnualCompensation.create!(total_sales: ('%010d' % rand(10 ** 10)), fixed_salary: FIXEDSALARY, person: sales_person_2)
-TotalAnnualCompensation.create!(total_sales: ('%010d' % rand(10 ** 10)), fixed_salary: FIXEDSALARY, person: sales_person_3)
-TotalAnnualCompensation.create!(total_sales: ('%010d' % rand(10 ** 10)), fixed_salary: FIXEDSALARY, person: sales_person_4)
-TotalAnnualCompensation.create!(total_sales: ('%010d' % rand(10 ** 10)), fixed_salary: FIXEDSALARY, person: sales_person_5)
-TotalAnnualCompensation.create!(total_sales: ('%010d' % rand(10 ** 10)), fixed_salary: FIXEDSALARY, person: sales_person_6)
-TotalAnnualCompensation.create!(total_sales: ('%010d' % rand(10 ** 10)), fixed_salary: FIXEDSALARY, person: sales_person_7)
-TotalAnnualCompensation.create!(total_sales: ('%010d' % rand(10 ** 10)), fixed_salary: FIXEDSALARY, person: sales_person_8)
-TotalAnnualCompensation.create!(total_sales: ('%010d' % rand(10 ** 10)), fixed_salary: FIXEDSALARY, person: sales_person_9)
-TotalAnnualCompensation.create!(total_sales: ('%010d' % rand(10 ** 10)), fixed_salary: FIXEDSALARY, person: sales_person_10)
-TotalAnnualCompensation.create!(total_sales: ('%010d' % rand(10 ** 10)), fixed_salary: FIXEDSALARY, person: sales_person_11)
-TotalAnnualCompensation.create!(total_sales: ('%010d' % rand(10 ** 10)), fixed_salary: FIXEDSALARY, person: sales_person_12)
+# random_people = Array.new(rand(10..30)) { Person.create!(name: Faker::Name.name, address: Faker::Address.full_address) }
+# 	ran_num = rand(10..30)
+# 	ran_num.times do |num|
+# 		Person.create!(name: Faker::Name.name, address: Faker::Address.full_address)
+# 	end
+# 	Array.new(rand(100..300)) {Deal.create!(person_id: random_person, title: Faker::Commerce.department(2, true), description: Faker::Commerce.product_name, amount: Faker::Commerce.price)}
+rand(10..30).times do 
+	person = Person.create!(name: Faker::Name.name, address: Faker::Address.full_address)
+	rand(100..300).times do 
+		Deal.create!(person: person, title: Faker::Commerce.department(2, true), description: Faker::Commerce.product_name, amount: Faker::Commerce.price)
+	end
+end

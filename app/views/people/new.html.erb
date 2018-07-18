@@ -1,0 +1,8 @@
+<h1>Create a new Person</h1>
+<%= form_for @person do |f| %>
+  <%= label_tag(:person, "Person Name:") %>
+  <%= text_field(:person, :name) %><br>
+  <%= label_tag(:person, "Person Address:") %>
+  <%= text_field(:person, :address) %><br>
+  <%= f.submit %>
+<% end %>

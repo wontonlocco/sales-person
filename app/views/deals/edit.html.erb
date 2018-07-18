@@ -1,0 +1,9 @@
+<%= link_to 'Add new sale', new_person_deal_path %>
+<h2>Lets edit some sales here </h2>
+<%= form_for [@person, @deal] do |f| %>
+  Title: <%= f.text_field :title %><br />
+  Description : <%= f.text_field :description %><br />
+  Amount: <%= f.text_area :amount %><br />
+  <%= f.submit %>
+<% end %>
+ <%= link_to 'Go Back', people_path %><br>

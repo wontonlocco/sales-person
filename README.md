@@ -12,7 +12,6 @@ The total annual compensation is the fixed salary plus the commission earned.
 
 # Current Objectives
 
-# How do I navigate to the url for this readme
-# My objective is for the link after "Total Compensation for " on show.html.erb for people to point to index.html for total_annual_compensation. 
-# Somewhere in this process the logic for adding total sales for the year to fixed salary and calculating a commision of 5%
-# Build out the edit and new views with crud capability for allowing the user to create these components 
+# Basic Crud functionality in place with devise.
+
+# Adding API functionality. 

@@ -10,25 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_12_172848) do
+ActiveRecord::Schema.define(version: 2018_07_17_140717) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "deals", force: :cascade do |t|
+    t.bigint "person_id"
+    t.string "title"
+    t.string "description"
+    t.string "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["person_id"], name: "index_deals_on_person_id"
+  end
+
   create_table "people", force: :cascade do |t|
-    t.string "name"
+    t.text "name"
     t.text "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "total_annual_compensations", force: :cascade do |t|
-    t.bigint "person_id"
-    t.string "fixed_salary"
-    t.string "total_sales"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["person_id"], name: "index_total_annual_compensations_on_person_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -49,5 +50,5 @@ ActiveRecord::Schema.define(version: 2018_07_12_172848) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "total_annual_compensations", "people"
+  add_foreign_key "deals", "people"
 end

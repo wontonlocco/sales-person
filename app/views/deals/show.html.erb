@@ -1,0 +1,8 @@
+<h1><%= @person.name %></h1>
+<h3><%= @deal.title %> </h3>
+<h4>Description: <%= @deal.description %></h4>
+<h4>Amount: <%= @deal.amount %> </h4>
+
+<%= link_to 'Back', person_deals_path %><br>
+<%= link_to 'Edit', edit_person_deal_path %><br>
+<%= link_to 'Delete', person_deal_path, method: 'delete' %>
