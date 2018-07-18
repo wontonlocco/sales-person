@@ -13,7 +13,7 @@
 # 	Array.new(rand(100..300)) {Deal.create!(person_id: random_person, title: Faker::Commerce.department(2, true), description: Faker::Commerce.product_name, amount: Faker::Commerce.price)}
 rand(10..30).times do 
 	person = Person.create!(name: Faker::Name.name, address: Faker::Address.full_address)
-	rand(100..300).times do 
+	rand(1000..3000).times do 
 		Deal.create!(person: person, title: Faker::Commerce.department(2, true), description: Faker::Commerce.product_name, amount: Faker::Commerce.price)
 	end
 end
