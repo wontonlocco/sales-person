@@ -1,7 +1,12 @@
 
 <body>
-	<h1>Sales Details for <%= link_to @person.name, person_deals_path(person_id: @person.id) %> </h1>
-	<span>Salary plus commission for the year is calculated at: <%= number_to_currency(@person.calculate_commission) %></span>
+	<h3>Sales Details for <%= link_to @person.name, person_deals_path(person_id: @person.id) %> </h3>
+<div class="col-lg-6">
+	<%= render 'google_map', person: @person %>
+</div>
+	<aside><h4>Salary plus commission for the year is calculated at: <%= number_to_currency(@person.calculate_commission) %></h4>
+		<p>The totals sales for the period is <%= number_to_currency(@person.calculate_total_sales) %></p>
+		<p>Earned commission for the period is <%= number_to_currency(@person.show_commission_earned_only) %></p></aside>
 <!-- above link destination should be to display compensation -->
 <!--Add something else to show for this individual person and reserve the nested details for the views that handle them -->
 	<br>

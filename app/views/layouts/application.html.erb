@@ -1,41 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <style>
-  table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-  }
-  td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-  }
-  tr:nth-child(even) {
-    background-color: #dddddd;
-  }
-</style>
     <title>Sales Person</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css' />
   </head>
 
   <body>
-    <nav>
-    <% if current_user %>
-    <p>Hello, <%= current_user.email %>
-      <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-      <% else %>
-      <%= link_to 'Register', new_user_registration_path %>
-      <%= link_to 'Login', new_user_session_path %>
-      <% end %>
-    </nav>
+    <%= render 'layouts/header' %>
+    <div class='container'>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
+    </div>
   </body>
 </html>

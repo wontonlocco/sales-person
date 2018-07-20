@@ -1,14 +1,14 @@
-<h1>Sales data for <%= @person.name %><br><%= @person.address %></h1>
+<h3>Sales data for <%= @person.name %><br><%= @person.address %></h3>
 <h3><%= link_to "List of people", people_path %></h3>
-<h3><%= link_to "Back to #{@person.name}", @person %></h3>
+<h4><%= link_to "Back to #{@person.name}", @person %></h4>
 <span>Salary plus commission for the year is calculated at: <%= number_to_currency(@person.calculate_commission) %></span>
+<%= render 'google_map', person: @person %>
 <table>
 	<thead>
 		<tr>
 			<th>Title</th>
 			<th>Description</th>
-			<th>Amount</th>
-			<th colspan="3"></th>
+			<th colspan="3">Amount</th>
 		</tr>
 	</thead>
 	<tbody>

@@ -14,4 +14,4 @@ The total annual compensation is the fixed salary plus the commission earned.
 
 # Basic Crud functionality in place with devise.
 
-# Adding API functionality. 
+# GoogleMap API is passed the address property but when it displays map it does not seem to pull city and state from address, rendering a map of the world instead of a more specific city and state.. This applies for seed data where official address data is generated.

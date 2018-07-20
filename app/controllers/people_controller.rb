@@ -5,8 +5,12 @@ class PeopleController < ApplicationController
 		@people = Person.all
 	end
 	def create
-		@person = Person.create(person_params)
-		redirect_to @person
+		@person = Person.create!(person_params)
+		if @person.save
+			redirect_to @person, notice: 'Person was successfully created.'
+		else
+			render :new
+		end
 	end
 	def new
 		@person = Person.new
@@ -25,7 +29,7 @@ class PeopleController < ApplicationController
 	end
 	private
 	def person_params
-		params.require(:person).permit(:name, :address)
+		params.require(:person).permit(:name, :address, :latitude, :longitude)
 	end
 	def find_person
 		@person = Person.find(params[:id])
