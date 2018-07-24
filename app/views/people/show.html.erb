@@ -4,9 +4,32 @@
 <div class="col-lg-6">
 	<%= render 'google_map', person: @person %>
 </div>
-	<aside><h4>Salary plus commission for the year is calculated at: <%= number_to_currency(@person.calculate_commission) %></h4>
+<div>
+	<%= link_to 'Add new sale', new_person_deal_path(@person) %>
+</div>
+	<aside>
+		<% if @person.deals.length > 0 %>
+		<h4>Salary plus commission for the year is calculated at: 
+		<%= number_to_currency(@person.calculate_commission) %>
+			<% else %>
+			No salary data yet for new employee: <%= @person.name %> 
+		<% end %>
+		<br>
+		</h4>
+		<% if @person.deals.length > 0 %>
 		<p>The totals sales for the period is <%= number_to_currency(@person.calculate_total_sales) %></p>
-		<p>Earned commission for the period is <%= number_to_currency(@person.show_commission_earned_only) %></p></aside>
+		<% else %>
+		No total sales data yet for new employee: <%= @person.name %>
+		<% end %>
+		<br>
+		<p>
+			<% if @person.deals.length > 0 %>
+			Earned commission for the period is <%= number_to_currency(@person.show_commission_earned_only) %>
+				<% else %>
+				No commission data yet for new employee: <%= @person.name %>
+				<% end %>
+				<br>
+			</p></aside>
 <!-- above link destination should be to display compensation -->
 <!--Add something else to show for this individual person and reserve the nested details for the views that handle them -->
 	<br>

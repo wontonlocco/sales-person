@@ -15,8 +15,7 @@
 		<tr>
 			<% @person.deals.each do |deal| %>
 			<td><%= link_to deal.title, person_deal_path(person_id: @person.id, id: deal.id) %></td>
-			<td><%= deal.description %></td>
-			<td><%= deal.amount %></td>	
+			<td><%= deal.description %></td><td><%= deal.amount %></td>
 		</tr>
 		<% end %> 
 	</tbody>

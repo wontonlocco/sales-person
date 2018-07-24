@@ -12,7 +12,7 @@ class Person < ApplicationRecord
 			amount.to_f
 		end
 		.reduce(:+)  
-		FIXEDSALARY + (combined_amount * COMMISSION_RATE)
+		FIXEDSALARY + (combined_amount * 0.05)
 	end
 	def calculate_total_sales
 		total_sales = deals.map do |deal|
